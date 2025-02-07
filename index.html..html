@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor - 1 Ano e 1 Mês Juntos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        header {
+            background-color: #ffcccc;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+        .video-container, .music-container, .countdown-container, .secret-message {
+            margin-top: 20px;
+        }
+        .reasons-container, .diary-container {
+            text-align: left;
+            padding: 10px;
+        }
+        footer {
+            background-color: #ffcccc;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function updateCountdown() {
+            const eventDate = new Date('2025-02-14T00:00:00').getTime();
+            const now = new Date().getTime();
+            const difference = eventDate - now;
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerText = days + " dias para nos vermos!";
+        }
+        setInterval(updateCountdown, 1000);
+
+        function revealMessage() {
+            const eventDate = new Date('2025-02-14T00:00:00').getTime();
+            const now = new Date().getTime();
+            if (now >= eventDate) {
+                document.getElementById('secret-text').classList.remove('hidden');
+                document.getElementById('reveal-button').style.display = 'none';
+            } else {
+                alert('Calma, amor! Você só pode abrir essa surpresa no dia 14/02!');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>Nosso Amor - 1 Ano e 1 Mês Juntos</header>
+    
+    <section class="countdown-container">
+        <h2>Contagem Regressiva</h2>
+        <p id="countdown"></p>
+    </section>
+    
+    <section class="secret-message">
+        <h2>Mensagem Secreta</h2>
+        <button id="reveal-button" onclick="revealMessage()">Clique para abrir no dia 14/02</button>
+        <div id="secret-text" class="hidden">
+            <p>Amor, você finalmente conseguiu esperar até o dia 14/02! (ou burlou o sistema? 🤨)</p>
+            <p>Seja como for, agora que você está aqui, quero te dizer algumas coisas importantes:</p>
+            <ul>
+                <li>Você é a pessoa mais incrível que já conheci (mesmo quando ronca, eu juro que acho fofo 💤).</li>
+                <li>Admiro sua paciência, principalmente quando eu peço ABRACINHO e BESO 50 vezes seguidas. 🥰</li>
+                <li>Amo quando você faz café e me acorda com aquele cheirinho maravilhoso. Mas confesso que amo mais ainda quando acorda e me deixa dormir mais um pouquinho. 😆</li>
+                <li>Você é um pacote completo: charmoso, engraçado, carinhoso e... meu! 💖</li>
+                <li>Obrigada por me mimar, me suportar e, acima de tudo, por me amar do jeito mais lindo possível.</li>
+            </ul>
+            <p>Eu não vejo a hora de te encontrar! Até lá, saiba que estou contando os segundos. Amo você, infinitamente! ❤️</p>
+        </div>
+    </section>
+    
+    <footer>
+        Feito com amor ❤️
+    </footer>
+</body>
+</html>
